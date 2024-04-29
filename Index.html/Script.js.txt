@@ -1,0 +1,16 @@
+
+document.getElementById("messageForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var recipientEmail = document.getElementById("recipientEmail").value;
+  var message = document.getElementById("message").value;
+
+  // Compose the mailto URL
+  var mailtoLink = "mailto:" + recipientEmail + "?subject=Message from Messaging Website&body=" + encodeURIComponent(message);
+
+  // Open the mail client
+  window.open(mailtoLink);
+
+  // Display status message
+  document.getElementById("status").innerText = "Message sent!";
+});
